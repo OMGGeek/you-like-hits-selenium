@@ -7,6 +7,7 @@ const  password = process.env.password;
 console.log("Process started with " + userName + " " + password);
 var driver = new webdriver.Builder().forBrowser("phantomjs").build();
 var hits = 0;
+var counter = 0;
 setTimeout(function(){driver.quit();console.log("Exists after 30 mins");throw new Error('exists after 30 mins');},2500000);
 
 
@@ -39,7 +40,6 @@ try {
 
 function start() {
 try {
-var counter = 0;
 driver.get("https://youlikehits.com/youtubenew2.php").then(function() {
   CaptchaSolver();
   loop();
