@@ -21,10 +21,14 @@ try {
 		driver.sleep(10000);
 		hits = driver.findElement(By.css("#bodybg > table.mainbodyloggedin > tbody > tr > td > table:nth-child(1) > tbody > tr > td > table > tbody > tr > td > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td > center > font")).getText();
 		hits.then(function(text){
+			console.log(text);
 			if(parseInt(text) > 100) {
-				driver.sleep(3600000)
-			
-			}
+				console.log("Sleep forever");
+				driver.sleep(3600000)	
+			} else {
+				console.log("start");
+				start();
+			}	
 		});
 	});
 } catch(e) {
